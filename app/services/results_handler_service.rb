@@ -15,7 +15,7 @@ class ResultsHandlerService
 
 
   def list_hits_for_urls
-    urls.map{ |url| es_search_for(page_hits_for_url_query(url)).dig('hits', 'total') }
+    urls.map{ |url| es_search_for(hits_for_url_within_range(url)).dig('hits', 'total') }
   end
 
 
@@ -28,17 +28,35 @@ class ResultsHandlerService
     es_connection.search index: 'events', body: query
   end
 
-  def page_hits_for_url_query(url)
-    { query: {
-        term: {
-            page_url: url
+  def hits_for_url_within_range(url)
+    {query: {
+        bool: {
+            must: {
+                range: {
+                    derived_tstamp: {
+                        gte: after_time,
+                        lte: before_time
+                    }
+                }
+            },
+            filter: {
+                term: {
+                    page_url: url
+                }
+            }
         }
-    } }
+    }}
+
+
+
   end
 
   def to_array(array)
     array.map{ |item| JSON.parse(item) }.flatten
   end
 
+  def to_epoch(time)
+    time.to_i
+  end
 
 end

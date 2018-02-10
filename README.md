@@ -7,10 +7,10 @@ Hit it with a client like `Postman`.
 
 `{"urls": ['array_of_urls'], "before": #time_stamp, "after": #time_stamp, "interval": 10 }`
 
-Currently, the endpoint returns the hit count for each URL specified.<br />
+Currently, the endpoint returns the hit count for each URL specified, filtered by `before` and `after` dates.<br />
 TODO: Make a graph to show the data
 
-`api/page_views/graph/
+`api/api/page_views/aggregate`
 
 ### Setup
 

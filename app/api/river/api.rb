@@ -1,4 +1,4 @@
-require_relative 'results_handler_service'
+require_relative '../../../app/services/results_handler_service'
 
 module River
   class API < Grape::API
@@ -6,7 +6,7 @@ module River
     prefix :api
 
     get :graph do
-      ResultsHandlerService.new(params).render
+      ResultsHandlerService.new.render
     end
 
   end

@@ -10,8 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'byebug'
 gem 'react-rails', '~> 1.7', '>= 1.7.1'
-gem 'elasticsearch-rails', '~> 0.1.9'
-gem 'elasticsearch-model', '~> 0.1.8'
+gem 'elasticsearch', '~> 2.0'
 gem 'grape', '~> 0.16.2'
 
 group :doc do

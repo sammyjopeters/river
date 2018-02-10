@@ -267,3 +267,110 @@ PG::ConnectionBad (FATAL:  database "river_development" does not exist
 
 
 Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 14:44:25 +1100
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 15:37:11 +1100
+
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  app/api/river/api.rb:9:in `initialize'
+  app/api/river/api.rb:9:in `new'
+  app/api/river/api.rb:9:in `block in <class:API>'
+
+
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.9ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (89.6ms)
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 15:37:46 +1100
+
+Faraday::ConnectionFailed (Failed to open TCP connection to elastic:9200 (getaddrinfo: nodename nor servname provided, or not known)):
+  app/services/results_handler_service.rb:6:in `render'
+  app/api/river/api.rb:9:in `block in <class:API>'
+
+
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.6ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.5ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (80.9ms)
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 15:39:05 +1100
+
+Faraday::ConnectionFailed (Failed to open TCP connection to elastic:9200 (getaddrinfo: nodename nor servname provided, or not known)):
+  app/services/results_handler_service.rb:6:in `render'
+  app/api/river/api.rb:9:in `block in <class:API>'
+
+
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (66.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 15:39:23 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 26ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 15:39:28 +1100
+
+Faraday::ConnectionFailed (Failed to open TCP connection to Host:0 (getaddrinfo: nodename nor servname provided, or not known)):
+  app/services/results_handler_service.rb:6:in `render'
+  app/api/river/api.rb:9:in `block in <class:API>'
+
+
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (68.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 15:40:12 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 26ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 15:40:17 +1100
+
+Faraday::ConnectionFailed (execution expired):
+  app/services/results_handler_service.rb:6:in `render'
+  app/api/river/api.rb:9:in `block in <class:API>'
+
+
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (75.8ms)
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 15:42:46 +1100
+
+Faraday::ConnectionFailed (execution expired):
+  app/services/results_handler_service.rb:6:in `render'
+  app/api/river/api.rb:9:in `block in <class:API>'
+
+
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.3ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (81.6ms)
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 15:58:51 +1100
+
+Faraday::ConnectionFailed (execution expired):
+  app/services/results_handler_service.rb:6:in `render'
+  app/api/river/api.rb:9:in `block in <class:API>'
+
+
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.2ms)
+  Rendered /Users/Sammyjo/.rvm/gems/ruby-2.3.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (73.4ms)
+
+
+Started GET "/api/graph" for 127.0.0.1 at 2018-02-10 17:03:14 +1100

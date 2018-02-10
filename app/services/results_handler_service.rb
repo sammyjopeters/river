@@ -1,9 +1,13 @@
 class ResultsHandlerService
 
-def render
-end
+  attr_reader :urls, :before_time, :after_time, :interval
 
-def es_connection
-end
+  def render
+    es_connection.cluster.health
+  end
+
+  def es_connection
+    Elasticsearch::Client.new url: ENV['ES_URL']
+  end
 
 end

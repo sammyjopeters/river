@@ -30,3 +30,8 @@
 .rvmrc
 
 .idea/*
+
+.byebug_history
+
+#local log files
+log/development.log

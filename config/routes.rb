@@ -1,3 +1,4 @@
 River::Application.routes.draw do
-  mount River::API => '/'
+
+  post '/histogram', to: 'application#histogram'
 end

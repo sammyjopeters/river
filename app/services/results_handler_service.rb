@@ -58,7 +58,11 @@ class ResultsHandlerService
   end
 
   def to_array(array)
-    array.map{ |item| JSON.parse(item) }.flatten
+    if array.is_a?(String)
+      JSON.parse(array) if array.is_a?(String)
+    else
+      array.map{ |item| JSON.parse(item) }.flatten
+    end
   end
 
   def to_epoch(time)

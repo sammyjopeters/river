@@ -13,9 +13,8 @@ class ResultsHandlerService
     list_hits_for_urls
   end
 
-
   def list_hits_for_urls
-    urls.map{ |url| es_search_for(hits_for_url_within_range(url)).dig('hits', 'total') }
+    urls.map{ |url| es_search_for(hits_for_url_within_range(url)) }
   end
 
 
@@ -45,10 +44,17 @@ class ResultsHandlerService
                 }
             }
         }
-    }}
-
-
-
+    },
+     aggs: {
+         page_views_over_time: {
+             date_histogram: {
+                 field: 'derived_tstamp',
+                 interval: interval,
+                 format: 'yyyy-MM-dd'
+             }
+         }
+     }
+    }
   end
 
   def to_array(array)

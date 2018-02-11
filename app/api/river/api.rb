@@ -7,15 +7,12 @@ module River
 
 
     resources :page_views do
-      get :show_graph do
-        'nothin yet.'
-      end
 
       params do
         requires :urls, type: Array[String]
         requires :before, type: DateTime
         requires :after, type: DateTime
-        requires :interval, type: Integer, desc: 'interval, in minutes'
+        requires :interval, type: String, desc: 'interval with unit, eg 10m'
       end
       post :aggregate do
         ResultsHandlerService.new(params).render

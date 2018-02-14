@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 gem 'pg', '~> 0.18'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'byebug'
 gem 'react-rails', '~> 1.7', '>= 1.7.1'
 gem 'elasticsearch', '~> 2.0'
+gem 'materialize-sass', '~> 0.96.2'
 
 group :doc do
   gem 'sdoc', require: false

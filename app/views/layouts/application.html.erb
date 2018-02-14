@@ -7,9 +7,19 @@
   <%= javascript_include_tag 'https://unpkg.com/recharts/umd/Recharts.min.js' %>
   <%= csrf_meta_tags %>
 </head>
+
+<nav class="teal darken-4">
+  <div class="nav-wrapper">
+    <%= link_to "River - I'm putting a nav here to take up space.", root_path, class: 'brand-logo' %>
+  </div>
+</nav>
+
 <body>
-
-<%= yield %>
-
+<div class="container">
+  <div class="row"></div>
+  <%= yield %>
+</div>
 </body>
+
+
 </html>

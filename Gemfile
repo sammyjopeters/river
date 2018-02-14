@@ -11,7 +11,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'byebug'
 gem 'react-rails', '~> 1.7', '>= 1.7.1'
 gem 'elasticsearch', '~> 2.0'
-gem 'grape', '~> 0.16.2'
 
 group :doc do
   gem 'sdoc', require: false

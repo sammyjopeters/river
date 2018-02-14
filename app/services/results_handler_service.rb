@@ -3,9 +3,9 @@ class ResultsHandlerService
   attr_reader :urls, :before_time, :after_time, :interval
 
   def initialize(params)
-    @urls = to_array(params[:urls])
-    @before_time = params[:before]
-    @after_time = params[:after]
+    @urls = params[:urls].split(',')
+    @before_time = DateTime.parse(params[:before]).to_s
+    @after_time = DateTime.parse(params[:after]).to_s
     @interval = params[:interval]
   end
 
@@ -45,28 +45,15 @@ class ResultsHandlerService
             }
         }
     },
-     aggs: {
-         page_views_over_time: {
+     aggs:  {
+         known_urls: {
              date_histogram: {
-                 field: 'derived_tstamp',
+                 field:    'derived_tstamp',
                  interval: interval,
-                 format: 'yyyy-MM-dd'
+                 format:   'yyyy-MM-dd-hh-mm-ss'
              }
          }
-     }
-    }
-  end
-
-  def to_array(array)
-    if array.is_a?(String)
-      JSON.parse(array) if array.is_a?(String)
-    else
-      array.map{ |item| JSON.parse(item) }.flatten
-    end
-  end
-
-  def to_epoch(time)
-    time.to_i
+     }}
   end
 
 end

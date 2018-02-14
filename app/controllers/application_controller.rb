@@ -4,27 +4,26 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
 
+  def new_search
+    render 'layouts/form'
+  end
 
   def histogram
-    @results = ResultsHandlerService.new(request_params).render
+    results = ResultsHandlerService.new(request_params).render
     respond_to do |format|
-      if @results
-        format.json do
-          render json: ResultsHandlerService.new(request_params).render
-        end
-        format.html do
-          render 'layouts/application', data: request_params
-        end
+      if results
+        format.json { render json: results }
+        format.html { render 'layouts/graph', locals: { data: results } }
       else
-        render json: 'could not render results'
+        format.html { redirect_to :new_search, notice: 'Something went wrong.' }
+        format.json { render json: 'something went wrong.', status: :unprocessable_entity }
       end
-
     end
-  endgi
+  end
 
 
   def request_params
-      params.permit(:urls, :before, :after, :interval)
-    end
+    params.permit(:urls, :before, :after, :interval)
+  end
 
   end

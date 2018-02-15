@@ -14,7 +14,11 @@ class ResultsHandlerService
   end
 
   def list_hits_for_urls
-    urls.map{ |url| es_search_for(hits_for_url_within_range(url)) }
+    res = []
+    urls.each do |url|
+      res << {url: url, aggs: es_search_for(hits_for_url_within_range(url)) }
+    end
+    res
   end
 
 

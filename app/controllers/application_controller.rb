@@ -10,10 +10,11 @@ class ApplicationController < ActionController::Base
 
   def histogram
     results = ResultsHandlerService.new(request_params).render
+    chart_data = AggregatePresenter.new(extrapolate_from_es(results).transform!)
     respond_to do |format|
       if results
         format.json { render json: results }
-        format.html { render 'layouts/graph', locals: { data: results } }
+        format.html { render 'layouts/graph', locals: { data: chart_data } }
       else
         format.html { redirect_to :new_search, notice: 'Something went wrong.' }
         format.json { render json: 'something went wrong.', status: :unprocessable_entity }

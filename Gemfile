@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'byebug'
-gem 'react-rails', '~> 1.7', '>= 1.7.1'
+gem 'react-rails', '~> 2.4', '>= 2.4.3'
 gem 'elasticsearch', '~> 2.0'
 gem 'materialize-sass', '~> 0.96.2'
 

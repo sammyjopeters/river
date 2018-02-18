@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def histogram
     results = ResultsHandlerService.new(request_params).render
-    chart_data = AggregatePresenter.new(extrapolate_from_es(results).transform!)
+     chart_data = AggregatePresenter.new(results).transform!
     respond_to do |format|
       if results
         format.json { render json: results }

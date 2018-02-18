@@ -3,7 +3,7 @@ class ResultsHandlerService
   attr_reader :urls, :before_time, :after_time, :interval
 
   def initialize(params)
-    @urls = params[:urls].split(',')
+    @urls = process_urls(params[:urls])
     @before_time = DateTime.parse(params[:before]).to_s
     @after_time = DateTime.parse(params[:after]).to_s
     @interval = params[:interval]
@@ -58,6 +58,10 @@ class ResultsHandlerService
              }
          }
      }}
+  end
+
+  def process_urls(urls)
+    urls.split(',').each { |url| url.strip! }
   end
 
 end

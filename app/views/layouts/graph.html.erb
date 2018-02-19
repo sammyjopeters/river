@@ -1,7 +1,13 @@
 <h3> The Histogram </h3>
 <hr>
-<%= react_component("StackedBarChart", { data: data }) %>
+
+<!-- this doesn't work -->
+<%= react_component("StackedBarChart", { data: data labels: url_labels }) %>
 
 <div id="graph-container"></div>
 
 <%= data %>
+
+<h2> And the labels </h2>
+
+<%= labels %>

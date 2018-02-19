@@ -9,12 +9,14 @@ class ApplicationController < ActionController::Base
   end
 
   def histogram
-    results = ResultsHandlerService.new(request_params).render
-     chart_data = AggregatePresenter.new(results).transform!
+    results         = ResultsHandlerService.new(request_params).render
+    agg_transformer = AggregatePresenter.new(results)
+    chart_data      = agg_transformer.transform!
+    url_labels      = agg_transformer.url_labels
     respond_to do |format|
       if results
-        format.json { render json: results }
-        format.html { render 'layouts/graph', locals: { data: chart_data } }
+        format.json { render json: chart_data }
+        format.html { render 'layouts/graph', locals: { data: chart_data, labels: url_labels } }
       else
         format.html { redirect_to :new_search, notice: 'Something went wrong.' }
         format.json { render json: 'something went wrong.', status: :unprocessable_entity }
